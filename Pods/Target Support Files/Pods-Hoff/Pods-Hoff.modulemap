@@ -1,0 +1,6 @@
+framework module Pods_Hoff {
+  umbrella header "Pods-Hoff-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,19 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BFFC9ECE01C5EE26E182891 /* Pods_Hoff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017F6DE513ED857B3EBB87CB /* Pods_Hoff.framework */; };
+		8435C07325BB3F0E00B4352A /* ProductListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C07225BB3F0E00B4352A /* ProductListNetworkService.swift */; };
+		8435C07A25BB409900B4352A /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C07925BB409900B4352A /* ProductModel.swift */; };
+		8435C08525BB44C400B4352A /* ProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C08425BB44C400B4352A /* ProductListPresenter.swift */; };
+		8435C08F25BBF3C600B4352A /* ProductListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C08E25BBF3C600B4352A /* ProductListCollectionViewCell.swift */; };
 		845223EF25BA0370003AEE6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845223EE25BA0370003AEE6F /* AppDelegate.swift */; };
 		845223F125BA0370003AEE6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845223F025BA0370003AEE6F /* SceneDelegate.swift */; };
 		845223F325BA0370003AEE6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845223F225BA0370003AEE6F /* ViewController.swift */; };
 		845223F625BA0370003AEE6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845223F425BA0370003AEE6F /* Main.storyboard */; };
 		845223F825BA0371003AEE6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845223F725BA0371003AEE6F /* Assets.xcassets */; };
 		845223FB25BA0371003AEE6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845223F925BA0371003AEE6F /* LaunchScreen.storyboard */; };
+		8452240425BAE181003AEE6F /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452240325BAE181003AEE6F /* ProductListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		017F6DE513ED857B3EBB87CB /* Pods_Hoff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8435C07225BB3F0E00B4352A /* ProductListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListNetworkService.swift; sourceTree = "<group>"; };
+		8435C07925BB409900B4352A /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		8435C08425BB44C400B4352A /* ProductListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenter.swift; sourceTree = "<group>"; };
+		8435C08E25BBF3C600B4352A /* ProductListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCollectionViewCell.swift; sourceTree = "<group>"; };
 		845223EB25BA0370003AEE6F /* Hoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845223EE25BA0370003AEE6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845223F025BA0370003AEE6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +35,9 @@
 		845223F725BA0371003AEE6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845223FA25BA0371003AEE6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845223FC25BA0371003AEE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8452240325BAE181003AEE6F /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		CF50455419F78128F4F12D9C /* Pods-Hoff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoff.debug.xcconfig"; path = "Target Support Files/Pods-Hoff/Pods-Hoff.debug.xcconfig"; sourceTree = "<group>"; };
+		E9FD1FE564FF41B44114FB2C /* Pods-Hoff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoff.release.xcconfig"; path = "Target Support Files/Pods-Hoff/Pods-Hoff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFFC9ECE01C5EE26E182891 /* Pods_Hoff.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8435C07C25BB448E00B4352A /* ProductListModule */ = {
+			isa = PBXGroup;
+			children = (
+				8435C07E25BB449C00B4352A /* View */,
+				8435C08825BB44E900B4352A /* Presenter */,
+				8435C08025BB44A100B4352A /* Model */,
+				8435C08225BB44A700B4352A /* Networking */,
+			);
+			path = ProductListModule;
+			sourceTree = "<group>";
+		};
+		8435C07E25BB449C00B4352A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8452240325BAE181003AEE6F /* ProductListViewController.swift */,
+				8435C08E25BBF3C600B4352A /* ProductListCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8435C08025BB44A100B4352A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8435C07925BB409900B4352A /* ProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8435C08225BB44A700B4352A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8435C07225BB3F0E00B4352A /* ProductListNetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8435C08825BB44E900B4352A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8435C08425BB44C400B4352A /* ProductListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8435C08A25BB450500B4352A /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				8435C08C25BB451200B4352A /* View */,
+			);
+			path = MainScreenModule;
+			sourceTree = "<group>";
+		};
+		8435C08C25BB451200B4352A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				845223F225BA0370003AEE6F /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		845223E225BA0370003AEE6F = {
 			isa = PBXGroup;
 			children = (
 				845223ED25BA0370003AEE6F /* Hoff */,
 				845223EC25BA0370003AEE6F /* Products */,
+				F81EEAFA623BDD9F1EBEB9AF /* Pods */,
+				E9619E3B9ECF71775D940FEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +135,31 @@
 			children = (
 				845223EE25BA0370003AEE6F /* AppDelegate.swift */,
 				845223F025BA0370003AEE6F /* SceneDelegate.swift */,
-				845223F225BA0370003AEE6F /* ViewController.swift */,
+				8435C08A25BB450500B4352A /* MainScreenModule */,
+				8435C07C25BB448E00B4352A /* ProductListModule */,
 				845223F425BA0370003AEE6F /* Main.storyboard */,
 				845223F725BA0371003AEE6F /* Assets.xcassets */,
 				845223F925BA0371003AEE6F /* LaunchScreen.storyboard */,
 				845223FC25BA0371003AEE6F /* Info.plist */,
 			);
 			path = Hoff;
+			sourceTree = "<group>";
+		};
+		E9619E3B9ECF71775D940FEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				017F6DE513ED857B3EBB87CB /* Pods_Hoff.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F81EEAFA623BDD9F1EBEB9AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF50455419F78128F4F12D9C /* Pods-Hoff.debug.xcconfig */,
+				E9FD1FE564FF41B44114FB2C /* Pods-Hoff.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 845223FF25BA0371003AEE6F /* Build configuration list for PBXNativeTarget "Hoff" */;
 			buildPhases = (
+				6AE73D6902EB59D73F3EFC4C /* [CP] Check Pods Manifest.lock */,
 				845223E725BA0370003AEE6F /* Sources */,
 				845223E825BA0370003AEE6F /* Frameworks */,
 				845223E925BA0370003AEE6F /* Resources */,
+				914CA24B64B8939A928E72F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +229,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6AE73D6902EB59D73F3EFC4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hoff-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		914CA24B64B8939A928E72F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hoff/Pods-Hoff-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hoff/Pods-Hoff-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hoff/Pods-Hoff-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		845223E725BA0370003AEE6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				845223F325BA0370003AEE6F /* ViewController.swift in Sources */,
+				8435C07A25BB409900B4352A /* ProductModel.swift in Sources */,
+				8435C08F25BBF3C600B4352A /* ProductListCollectionViewCell.swift in Sources */,
+				8435C08525BB44C400B4352A /* ProductListPresenter.swift in Sources */,
+				8435C07325BB3F0E00B4352A /* ProductListNetworkService.swift in Sources */,
 				845223EF25BA0370003AEE6F /* AppDelegate.swift in Sources */,
+				8452240425BAE181003AEE6F /* ProductListViewController.swift in Sources */,
 				845223F125BA0370003AEE6F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,12 +427,14 @@
 		};
 		8452240025BA0371003AEE6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF50455419F78128F4F12D9C /* Pods-Hoff.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XK4D24WZ52;
 				INFOPLIST_FILE = Hoff/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +448,14 @@
 		};
 		8452240125BA0371003AEE6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9FD1FE564FF41B44114FB2C /* Pods-Hoff.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XK4D24WZ52;
 				INFOPLIST_FILE = Hoff/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
