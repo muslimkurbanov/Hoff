@@ -17,6 +17,9 @@ struct Items: Decodable {
     var image: String
     var isFavorite: Bool
     var prices: [URLKing.RawValue:Int]
+    var statusText: String?
+    var rating: Int
+    var isBestPrice: Bool
 }
 
 enum URLKing: String {

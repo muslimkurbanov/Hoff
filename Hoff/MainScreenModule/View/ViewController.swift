@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func pushCatalogAction(_ sender: Any) {
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductListViewController") as? ProductListViewController else { return }
+        let presenter = MainViewPresenter(view: vc)
+        vc.presenter = presenter
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 

@@ -24,10 +24,24 @@ final class MainViewPresenter: ViewPresetnerProtocol {
         self.view = view
         self.getMenu()
     }
+    
+    
+    let sortArray = ["popular", "price"]
+    
+    func sirtBy(id: Int) {
+        let sortBy = sortArray[id]
+        getCatalog(sortBy: sortBy)
+    }
 
     func getMenu() {
+        guard sortArray.count > 0 else { return }
+        getCatalog(sortBy: sortArray[0])
+    }
+    
+    
+    private func getCatalog(sortBy: String) {
         
-        networkService.getProduct { [weak self] result in
+        networkService.getProduct(categoryId: "320", sortBy: sortBy) { [weak self] result in
             
             guard let self = self else { return }
             

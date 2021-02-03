@@ -8,6 +8,6 @@ target 'Hoff' do
   # Pods for Hoff
 pod 'Alamofire', '~> 5.2'
 pod 'SDWebImage'
-
+pod 'Cosmos', '~> 23.0'
 
 end

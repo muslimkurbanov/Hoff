@@ -24,13 +24,17 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
             productListCollectionView.reloadData()
         }
     }
+    @IBOutlet weak var nameOfGroupLabel: UILabel!
     
     var presenter: ViewPresetnerProtocol!
+    
+    let arrayOfCells = ["Кровати", "Диваны", "Шкафы", "Столы", "Стулья", "Кресла"]
+    let att = ("Bag", 12)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = MainViewPresenter(view: self)
+        //presenter = MainViewPresenter(view: self)
 
         typesOfProductCollectionView.delegate = self
         typesOfProductCollectionView.dataSource = self
@@ -45,10 +49,10 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.productListCollectionView {
-            return searchResponse.count // Replace with count of your data for collectionViewA
-            }
+            return searchResponse.count
+        }
 
-        return 5 // Replace with count of your data for collectionViewB
+        return arrayOfCells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,15 +60,25 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductListCollectionViewCell
             let item = searchResponse[indexPath.row]
             cellA.configurate(with: item)
-            cellA.backgroundColor = .blue
+            
                 return cellA
             }
 
             else {
-                let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath)
+                let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath) as! TypesOfProductCell
+                let item = arrayOfCells[indexPath.row]
+                cellB.label.text = item
+                
                 return cellB
             }
     }
+    
+    
+}
+
+class TypesOfProductCell: UICollectionViewCell {
+    
+    @IBOutlet weak var label: UILabel!
 }
 
 extension ProductListViewController: ProductListViewProtocol {
