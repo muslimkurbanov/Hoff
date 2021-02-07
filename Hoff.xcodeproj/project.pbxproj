@@ -19,6 +19,12 @@
 		845223F825BA0371003AEE6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845223F725BA0371003AEE6F /* Assets.xcassets */; };
 		845223FB25BA0371003AEE6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845223F925BA0371003AEE6F /* LaunchScreen.storyboard */; };
 		8452240425BAE181003AEE6F /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452240325BAE181003AEE6F /* ProductListViewController.swift */; };
+		84BD284F25CB060100A5A92F /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD284E25CB060100A5A92F /* ItemsView.swift */; };
+		84BD285625CB095700A5A92F /* TypesOfProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD285525CB095700A5A92F /* TypesOfProductCell.swift */; };
+		84D66D4D25CC6E2300118454 /* SortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D66D4C25CC6E2300118454 /* SortVC.swift */; };
+		84D66D5425CD9EF600118454 /* SortVCPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D66D5325CD9EF600118454 /* SortVCPresentationController.swift */; };
+		84D66D5725CD9F1A00118454 /* SortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D66D5625CD9F1A00118454 /* SortVC.xib */; };
+		84D66D5C25CDBA4000118454 /* ProductListUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D66D5B25CDBA4000118454 /* ProductListUserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		845223FA25BA0371003AEE6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845223FC25BA0371003AEE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8452240325BAE181003AEE6F /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		84BD284E25CB060100A5A92F /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		84BD285525CB095700A5A92F /* TypesOfProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfProductCell.swift; sourceTree = "<group>"; };
+		84D66D4C25CC6E2300118454 /* SortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVC.swift; sourceTree = "<group>"; };
+		84D66D5325CD9EF600118454 /* SortVCPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVCPresentationController.swift; sourceTree = "<group>"; };
+		84D66D5625CD9F1A00118454 /* SortVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortVC.xib; sourceTree = "<group>"; };
+		84D66D5B25CDBA4000118454 /* ProductListUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListUserSettings.swift; sourceTree = "<group>"; };
 		CF50455419F78128F4F12D9C /* Pods-Hoff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoff.debug.xcconfig"; path = "Target Support Files/Pods-Hoff/Pods-Hoff.debug.xcconfig"; sourceTree = "<group>"; };
 		E9FD1FE564FF41B44114FB2C /* Pods-Hoff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoff.release.xcconfig"; path = "Target Support Files/Pods-Hoff/Pods-Hoff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,8 +78,8 @@
 		8435C07E25BB449C00B4352A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8452240325BAE181003AEE6F /* ProductListViewController.swift */,
-				8435C08E25BBF3C600B4352A /* ProductListCollectionViewCell.swift */,
+				84BD285125CB092C00A5A92F /* ProductList */,
+				84D66D5925CDA9DE00118454 /* Sort */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -76,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				8435C07925BB409900B4352A /* ProductModel.swift */,
+				84D66D5B25CDBA4000118454 /* ProductListUserSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +156,36 @@
 				845223FC25BA0371003AEE6F /* Info.plist */,
 			);
 			path = Hoff;
+			sourceTree = "<group>";
+		};
+		84BD285125CB092C00A5A92F /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				8452240325BAE181003AEE6F /* ProductListViewController.swift */,
+				8435C08E25BBF3C600B4352A /* ProductListCollectionViewCell.swift */,
+				84BD285325CB093800A5A92F /* Items */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		84BD285325CB093800A5A92F /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				84BD284E25CB060100A5A92F /* ItemsView.swift */,
+				84BD285525CB095700A5A92F /* TypesOfProductCell.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		84D66D5925CDA9DE00118454 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				84D66D4C25CC6E2300118454 /* SortVC.swift */,
+				84D66D5625CD9F1A00118454 /* SortVC.xib */,
+				84D66D5325CD9EF600118454 /* SortVCPresentationController.swift */,
+			);
+			name = Sort;
+			path = Items;
 			sourceTree = "<group>";
 		};
 		E9619E3B9ECF71775D940FEB /* Frameworks */ = {
@@ -221,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D66D5725CD9F1A00118454 /* SortVC.xib in Resources */,
 				845223FB25BA0371003AEE6F /* LaunchScreen.storyboard in Resources */,
 				845223F825BA0371003AEE6F /* Assets.xcassets in Resources */,
 				845223F625BA0370003AEE6F /* Main.storyboard in Resources */,
@@ -277,11 +321,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				845223F325BA0370003AEE6F /* ViewController.swift in Sources */,
+				84BD284F25CB060100A5A92F /* ItemsView.swift in Sources */,
 				8435C07A25BB409900B4352A /* ProductModel.swift in Sources */,
+				84BD285625CB095700A5A92F /* TypesOfProductCell.swift in Sources */,
 				8435C08F25BBF3C600B4352A /* ProductListCollectionViewCell.swift in Sources */,
+				84D66D5C25CDBA4000118454 /* ProductListUserSettings.swift in Sources */,
 				8435C08525BB44C400B4352A /* ProductListPresenter.swift in Sources */,
+				84D66D5425CD9EF600118454 /* SortVCPresentationController.swift in Sources */,
 				8435C07325BB3F0E00B4352A /* ProductListNetworkService.swift in Sources */,
 				845223EF25BA0370003AEE6F /* AppDelegate.swift in Sources */,
+				84D66D4D25CC6E2300118454 /* SortVC.swift in Sources */,
 				8452240425BAE181003AEE6F /* ProductListViewController.swift in Sources */,
 				845223F125BA0370003AEE6F /* SceneDelegate.swift in Sources */,
 			);

@@ -7,9 +7,13 @@
 
 import Foundation
 
+struct Helper {
+    static var shared = Helper()
+    var index: Int = 0
+}
+
 struct Product: Decodable {
     var items: [Items]
-    
 }
 struct Items: Decodable {
     var name: String
@@ -21,7 +25,6 @@ struct Items: Decodable {
     var rating: Int
     var isBestPrice: Bool
 }
-
 enum URLKing: String {
     case new
     case old

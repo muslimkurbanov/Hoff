@@ -30,6 +30,30 @@
                                     <action selector="pushCatalogAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDL-aG-8Wd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-F9-L0R">
+                                <rect key="frame" x="184" y="196" width="46" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="buttonOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="loB-jM-1jL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-Qt-QGO">
+                                <rect key="frame" x="171" y="354" width="46" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="buttonTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcs-TC-eNR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f40-af-pwT">
+                                <rect key="frame" x="42" y="322" width="46" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="buttonThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ixz-rI-MiU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -165,6 +189,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="199" height="321"/>
                                         <connections>
+                                            <outlet property="addToFavoriteImage" destination="FUx-jg-RtL" id="AD3-jH-Fm6"/>
                                             <outlet property="isBestPriceLabel" destination="n9I-WR-6jd" id="6I8-W6-Jxs"/>
                                             <outlet property="lineImageView" destination="MBz-pp-UkN" id="uLb-s6-PBh"/>
                                             <outlet property="numberOfViewsLabel" destination="UGP-hk-l75" id="QeZ-CX-dcv"/>
@@ -179,7 +204,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" id="e75-eM-YMe">
+                            <view contentMode="scaleToFill" id="e75-eM-YMe" customClass="ItemsView" customModule="Hoff" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -218,7 +243,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <outlet property="label" destination="39i-W0-TcJ" id="5UE-sc-gSE"/>
+                                                    <outlet property="typeNameLabel" destination="39i-W0-TcJ" id="a0c-5c-aru"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -240,9 +265,16 @@
                                         <state key="normal" title="По популярности" image="swap">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showFilterVC:" destination="OpX-CL-jrV" eventType="touchUpInside" id="GoJ-hJ-E5F"/>
+                                            <action selector="testWithSender:" destination="e75-eM-YMe" eventType="touchUpInside" id="bKB-kP-1Hv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="itemsCollectionView" destination="3Wb-PR-KU1" id="Rm1-eU-mTn"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uNo-SV-jaB"/>
@@ -255,7 +287,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productListCollectionView" destination="iUp-KE-4C4" id="cWf-b7-wei"/>
-                        <outlet property="typesOfProductCollectionView" destination="3Wb-PR-KU1" id="oeE-Ai-PCZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNc-SZ-qoH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

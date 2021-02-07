@@ -14,7 +14,7 @@ protocol NetworkServiceProtocol {
 
 class NetworkService: NetworkServiceProtocol {
     func getProduct(categoryId: String, sortBy: String, completion: @escaping (Result<Product?, Error>) -> Void) {
-        let urlString = "https://hoff.ru/api/v2/get_products_new?sort_type=desc&limit=40&offset=0&isAndroid=true&app_version=1.8.16&location=19"
+        let urlString = "https://hoff.ru/api/v2/get_products_new?sort_type=desc&limit=20&offset=0&isAndroid=true&app_version=1.8.16&location=19"
         
         var params: [String: String] = [:]
         params["category_id"] = categoryId
@@ -30,10 +30,8 @@ class NetworkService: NetworkServiceProtocol {
                 if let arrayDictionary = value as? [String: Any] {
                     do {
                         let data = try JSONSerialization.data(withJSONObject: arrayDictionary, options: .fragmentsAllowed)
-                        print(data)
                         let result = try JSONDecoder().decode(Product.self, from: data)
                         completion(.success(result))
-                        print(result)
                     } catch {
                             completion(.failure(error))
                             print(error)
