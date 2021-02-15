@@ -13,28 +13,27 @@ class AddToFavoriteManager {
     private let defaults = UserDefaults.standard
     private let menuKey = "LIKE_PRODUCT"
     
-    var dishesIds: [Int] {
+    var productIds: [Int] {
         let array  = defaults.object(forKey: menuKey) as? [Int]
-//        let array = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? [Int]
         return array ?? []
     }
     
     func addToFavoriteProduct(_ id: Int) -> Bool {
-        return dishesIds.contains(id)
+        return productIds.contains(id)
     }
     
     func selectFavorite(by id: Int) -> Bool {
         var added: Bool
-        var dishesCopy = dishesIds
+        var productsCopy = productIds
         
-        if dishesCopy.contains(id), let index = dishesCopy.firstIndex(of: id) {
-            dishesCopy.remove(at: index)
+        if productsCopy.contains(id), let index = productsCopy.firstIndex(of: id) {
+            productsCopy.remove(at: index)
             added = false
         } else {
-            dishesCopy.append(id)
+            productsCopy.append(id)
             added = true
         }
-        defaults.set(dishesCopy, forKey: menuKey)
+        defaults.set(productsCopy, forKey: menuKey)
         return added
     }
     

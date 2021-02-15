@@ -7,15 +7,10 @@
 
 import Foundation
 
-struct Helper {
-    static var shared = Helper()
-    var index: Int = 0
-}
-
 struct Product: Decodable {
-    var items: [Items]
+    var items: [Item]
 }
-struct Items: Decodable {
+struct Item: Decodable {
     var name: String
     var id: String
     var image: String

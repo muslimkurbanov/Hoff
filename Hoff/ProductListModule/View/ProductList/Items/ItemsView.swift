@@ -19,7 +19,7 @@ class ItemsView: UIView {
     }
 
     @IBAction func test(sender: Any) {
-        print("adadadasda")
+        
     }
 }
 

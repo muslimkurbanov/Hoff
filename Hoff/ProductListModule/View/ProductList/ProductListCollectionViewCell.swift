@@ -32,7 +32,7 @@ class ProductListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configurate(with model: Items, _ isLiked: Bool) {
+    func configurate(with model: Item, _ isLiked: Bool) {
         self.id = Int(model.id)
         self.isLiked = isLiked
         
@@ -65,7 +65,6 @@ class ProductListCollectionViewCell: UICollectionViewCell {
         let change = cartManager.selectFavorite(by: id)
         isLiked = change
     }
-    
     
     func toggleProduct() {
         let imageName = isLiked ? "fillHeart" : "heart"
