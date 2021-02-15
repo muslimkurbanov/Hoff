@@ -9,7 +9,6 @@ import UIKit
 
 class SortVCPresentationController: UIPresentationController {
     
-    
     let blurEffectView: UIVisualEffectView!
     var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     

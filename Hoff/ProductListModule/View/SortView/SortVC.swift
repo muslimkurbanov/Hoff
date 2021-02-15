@@ -7,14 +7,15 @@
 
 import UIKit
 
+//MARK: - Protocols
 protocol SortViewDelegate: class {
     func applySort(with id: Int)
 }
 
-
 final class SortVC: UIViewController {
     
     weak var delegate: SortViewDelegate?
+    weak var update: ProductListViewProtocol?
     
     private var hasSetPointOrigin = false
     private var pointOrigin: CGPoint?
@@ -36,23 +37,32 @@ final class SortVC: UIViewController {
         }
     }
     
-    
-    // MARK: - IB Actions
+    // MARK: - IBActions
     
     @IBAction private func buttonOne(_ sender: Any) {
-        delegate?.applySort(with: 0)
+        dismiss(animated: true) {
+            
+            self.delegate?.applySort(with: 0)
+        }
     }
     
     @IBAction private func buttonTwo(_ sender: Any) {
-        delegate?.applySort(with: 1)
+        dismiss(animated: true) {
+            self.delegate?.applySort(with: 1)
+        }
+        
     }
     
     @IBAction private func buttonThree(_ sender: Any) {
-        delegate?.applySort(with: 2)
+        dismiss(animated: true) {
+            self.delegate?.applySort(with: 2)
+        }
     }
     
     @IBAction private func buttonFour(_ sender: Any) {
-        delegate?.applySort(with: 3)
+        dismiss(animated: true) {
+            self.delegate?.applySort(with: 3)
+        }
     }
     
     

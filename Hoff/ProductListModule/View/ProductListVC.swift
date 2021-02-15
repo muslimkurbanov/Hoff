@@ -11,6 +11,7 @@ import UIKit
 protocol ProductListViewProtocol: class {
     func success()
     func failure(error: Error)
+    func scrollToTop()
 }
 
 class ProductListVC: UIViewController {
@@ -20,14 +21,17 @@ class ProductListVC: UIViewController {
     private let cartManager = AddToFavoriteManager.shared
     private let refreshControl = UIRefreshControl()
     var presenter: ViewPresetnerProtocol!
+    var offset = 1
+    var limit = 20
 
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         productListCVSettings()
-        presenter.getProducts(id: 0)
+        presenter.getProducts(id: 0, offset: "0", limit: "20")
     }
     
-    //MARK: - IBAction
+    //MARK: - IBActions
     @IBAction func showFilterVC(_ sender: Any) {
         let vc = SortVC()
         vc.modalPresentationStyle = .custom
@@ -53,7 +57,10 @@ extension ProductListVC: UIViewControllerTransitioningDelegate {
 
 //MARK: - ProductListViewProtocol
 extension ProductListVC: ProductListViewProtocol {
-    
+    func scrollToTop() {
+        limit = 20
+        self.productListCollectionView.setContentOffset(CGPoint(x:0,y:0), animated: false)
+    }
     func success() {
         productListCollectionView.reloadData()
     }
@@ -78,16 +85,19 @@ extension ProductListVC: UICollectionViewDataSource {
         cellA.configurate(with: item, isLiked)
         return cellA
     }
+    
 }
 
 //MARK: - Delegate
 extension ProductListVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
         let id = indexPath.item == (presenter.items.count) - 1
         print(indexPath.item)
         if id {
-            print("NEXT")
+            limit += 20
+            presenter.getProducts(id: 0, offset: "0", limit: "\(limit)")
         }
     }
 }

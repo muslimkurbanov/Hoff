@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class AddToFavoriteManager {
     static let shared = AddToFavoriteManager()
     private init() {}

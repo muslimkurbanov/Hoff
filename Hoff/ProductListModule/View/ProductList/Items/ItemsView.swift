@@ -9,20 +9,25 @@ import UIKit
 
 class ItemsView: UIView {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var itemsCollectionView: UICollectionView!
+    
+    //MARK: - Variables
     let arrayOfCells = ["Кровати", "Диваны", "Шкафы", "Столы", "Стулья", "Кресла"]
             
+    //MARK: - Lifecycle
     override func draw(_ rect: CGRect) {
         itemsCollectionView.delegate = self
         itemsCollectionView.dataSource = self
         itemsCollectionView.showsHorizontalScrollIndicator = false
     }
-
+    //MARK: - IBActions
     @IBAction func test(sender: Any) {
         
     }
 }
 
+//MARK: - DataSource, Delegate
 extension ItemsView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         arrayOfCells.count

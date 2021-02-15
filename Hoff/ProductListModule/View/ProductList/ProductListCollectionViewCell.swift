@@ -14,6 +14,7 @@ class ProductListCollectionViewCell: UICollectionViewCell {
     public var cartManager = AddToFavoriteManager.shared
     public var id: Int!
     
+    //MARK: - IBOutlets
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var saleLabel: UILabel!
@@ -28,21 +29,24 @@ class ProductListCollectionViewCell: UICollectionViewCell {
     
     var isLiked: Bool = false {
         didSet {
-            toggleProduct()
+            toggleImage()
         }
     }
-    
+    //MARK: - IBActions
+    @IBAction func addTofavoriteButton(_ sender: Any) {
+        let change = cartManager.selectFavorite(by: id)
+        isLiked = change
+    }
+    //MARK: - Functions
     func configurate(with model: Item, _ isLiked: Bool) {
         self.id = Int(model.id)
         self.isLiked = isLiked
         
-        productNameLabel.text = model.name
-        productImageView?.sd_setImage(with: URL(string: model.image), completed: nil)
-        //        numberOfViewsLabel.text = "(" + model.numberOfReviews! + ")"
-        isBestPriceLabel.isHidden = !model.isBestPrice
-        
         let price = model.prices["new"]! / 100
         
+        productNameLabel.text = model.name
+        productImageView?.sd_setImage(with: URL(string: model.image), completed: nil)
+        isBestPriceLabel.isHidden = !model.isBestPrice
         priceLabel.text = "\(model.prices["new"] ?? 0)"
         oldPriceLabbel.text = "\(model.prices["old"] ?? 0)"
         
@@ -57,19 +61,13 @@ class ProductListCollectionViewCell: UICollectionViewCell {
         if saleLabel.text == "00 %" {
             saleLabel.isHidden = true
         } else { saleLabel.isHidden = false }
+        
         statusLabel.text = model.statusText
         ratingView.rating = Double(model.rating)
     }
     
-    @IBAction func addTofavoriteButton(_ sender: Any) {
-        let change = cartManager.selectFavorite(by: id)
-        isLiked = change
-    }
-    
-    func toggleProduct() {
+    func toggleImage() {
         let imageName = isLiked ? "fillHeart" : "heart"
-//        addToFavoriteImage?.setBackgroundImage(UIImage(named: imageName), for: .normal)
         addToFavoriteImage.setImage(UIImage(named: imageName), for: .normal)
     }
-    
 }
