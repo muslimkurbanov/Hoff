@@ -47,10 +47,8 @@ class ProductListCollectionViewCell: UICollectionViewCell {
         productNameLabel.text = model.name
         productImageView?.sd_setImage(with: URL(string: model.image), completed: nil)
         isBestPriceLabel.isHidden = !model.isBestPrice
-//        let formated = String(format: "%.2f", "\(model.prices["new"] ?? 1)")
-        priceLabel.text = "\(model.prices["new"] ?? 0)"
-//        priceLabel.text = formated
-        oldPriceLabbel.text = "\(model.prices["old"] ?? 0)"
+        priceLabel.text = "\(model.prices["new"]?.formattedWithSeparator ?? "") ₽"
+        oldPriceLabbel.text = "\(model.prices["old"]?.formattedWithSeparator ?? "") ₽"
         
         if model.prices["new"] == model.prices["old"] {
             oldPriceLabbel.isHidden = true
@@ -72,4 +70,16 @@ class ProductListCollectionViewCell: UICollectionViewCell {
         let imageName = isLiked ? "fillHeart" : "heart"
         addToFavoriteImage.setImage(UIImage(named: imageName), for: .normal)
     }
+}
+
+extension Formatter {
+    static let withSeparator: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = " "
+        return formatter
+    }()
+}
+extension Numeric {
+    var formattedWithSeparator: String { Formatter.withSeparator.string(for: self) ?? "" }
 }
