@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SortVC" customModule="Hoff" customModuleProvider="target">
             <connections>
+                <outlet property="firstButton" destination="QU3-gh-YaG" id="v2m-HF-vCh"/>
+                <outlet property="fourthButton" destination="MV7-x2-hNc" id="a4p-Jv-bAV"/>
+                <outlet property="secondButton" destination="pOb-Cp-ZTh" id="YUn-c8-wd0"/>
+                <outlet property="thirdButton" destination="FWy-rJ-lxo" id="UQP-An-pXr"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ROo-7t-Gq5"/>
             </connections>
         </placeholder>
@@ -36,7 +40,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="По возрастанию цены">
+                    <state key="normal" title="По убыванию цены">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -60,7 +64,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="По убыванию цены">
+                    <state key="normal" title="По возрастанию цены">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

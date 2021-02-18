@@ -10,7 +10,7 @@ import Foundation
 //MARK: - Protocols
 protocol ViewPresetnerProtocol: SortViewDelegate {
     var items: [Item] { get set }
-    func getProducts(id: Int, offset: String, limit: String)
+    func getProducts(id: Int, offset: String, limit: String, sortType: String)
 }
 
 final class MainViewPresenter: ViewPresetnerProtocol {
@@ -26,30 +26,29 @@ final class MainViewPresenter: ViewPresetnerProtocol {
         self.view = view
     }
     
-    let sortArray = ["popular", "price", "lowprice","discounts"]
+    let sortArray = ["popular", "price", "price", "discount"]
+    let sortTypeArray = ["desc","asc","desc","desc"]
+    let limit = 20
     
     //MARK: - Functions
-    func getProducts(id: Int, offset: String, limit: String) {
+    func getProducts(id: Int, offset: String, limit: String, sortType: String) {
         guard sortArray.count > 0 else { return }
-        getCatalog(sortBy: sortArray[id], offset: offset, limit: limit)
-        print("getManu")
+        getCatalog(sortBy: sortArray[id], offset: offset, limit: limit, sortType: sortType)
     }
     
     func applyOffset(with id: Int) {
         
     }
     
-    func applySort(with id: Int) {
+    func applySort(id: Int, title: String) {
         let sortBy = sortArray[id]
-        getCatalog(sortBy: sortBy, offset: "0", limit: "20")
-        view?.scrollToTop()
-        
+        let sortType = sortTypeArray[id]
+        getCatalog(sortBy: sortBy, offset: "0", limit: "20", sortType: sortType)
+        view?.scrollToTop(Limit: limit, title: title)
     }
     
-    private func getCatalog(sortBy: String, offset: String, limit: String) {
-        print("getCatalog")
-
-        networkService.getProduct(categoryId: "320", sortBy: sortBy, offset: offset, limit: limit) { [weak self] result in
+    private func getCatalog(sortBy: String, offset: String, limit: String, sortType: String) {
+        networkService.getProduct(categoryId: "320", sortBy: sortBy, offset: offset, limit: limit, sortType: sortType) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let searchResponce):
@@ -59,6 +58,7 @@ final class MainViewPresenter: ViewPresetnerProtocol {
                                         
                     self?.items = items
                     self?.view?.success()
+                    
                     
                 case .failure(let error):
                     self?.view?.failure(error: error)

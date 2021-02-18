@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: - Protocols
 protocol SortViewDelegate: class {
-    func applySort(with id: Int)
+    func applySort(id: Int, title: String)
 }
 
 final class SortVC: UIViewController {
@@ -20,9 +20,17 @@ final class SortVC: UIViewController {
     private var hasSetPointOrigin = false
     private var pointOrigin: CGPoint?
     
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var firstButton: UIButton!
+    
+    @IBOutlet weak var secondButton: UIButton!
+    
+    @IBOutlet weak var thirdButton: UIButton!
+    
+    @IBOutlet weak var fourthButton: UIButton!
     
     // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
@@ -38,30 +46,36 @@ final class SortVC: UIViewController {
     }
     
     // MARK: - IBActions
-    
     @IBAction private func buttonOne(_ sender: Any) {
         dismiss(animated: true) {
-            
-            self.delegate?.applySort(with: 0)
+            Index.shared.index = 0
+            Index.shared.sortType = "desc"
+            self.delegate?.applySort(id: 0, title: self.firstButton.title(for: .normal) ?? "")
         }
     }
     
     @IBAction private func buttonTwo(_ sender: Any) {
         dismiss(animated: true) {
-            self.delegate?.applySort(with: 1)
+            Index.shared.index = 1
+            Index.shared.sortType = "asc"
+            self.delegate?.applySort(id: 1, title: self.secondButton.title(for: .normal) ?? "")
         }
         
     }
     
     @IBAction private func buttonThree(_ sender: Any) {
         dismiss(animated: true) {
-            self.delegate?.applySort(with: 2)
+            Index.shared.index = 2
+            Index.shared.sortType = "desc"
+            self.delegate?.applySort(id: 2, title: self.thirdButton.title(for: .normal) ?? "")
         }
     }
     
     @IBAction private func buttonFour(_ sender: Any) {
         dismiss(animated: true) {
-            self.delegate?.applySort(with: 3)
+            Index.shared.index = 3
+            Index.shared.sortType = "desc"
+            self.delegate?.applySort(id: 3, title: self.fourthButton.title(for: .normal) ?? "")
         }
     }
     
@@ -78,7 +92,6 @@ final class SortVC: UIViewController {
             if dragVelocity.y >= 1300 {
                 self.dismiss(animated: true, completion: nil)
             } else {
-                // Set back to original position of the view controller
                 UIView.animate(withDuration: 0.3) {
                     self.view.frame.origin = self.pointOrigin ?? CGPoint(x: 0, y: 400)
                 }

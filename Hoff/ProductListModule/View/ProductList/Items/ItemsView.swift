@@ -13,7 +13,7 @@ class ItemsView: UIView {
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
     //MARK: - Variables
-    let arrayOfCells = ["Кровати", "Диваны", "Шкафы", "Столы", "Стулья", "Кресла"]
+    let arrayOfCells = ["Угловые", "Кожанные", "Прямые"]
             
     //MARK: - Lifecycle
     override func draw(_ rect: CGRect) {

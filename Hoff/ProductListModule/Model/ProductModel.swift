@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct Index {
+    static var shared = Index()
+    var index: Int = 0
+    var sortType: String = "desc"
+}
+
 struct Product: Decodable {
     var items: [Item]
 }

@@ -47,7 +47,9 @@ class ProductListCollectionViewCell: UICollectionViewCell {
         productNameLabel.text = model.name
         productImageView?.sd_setImage(with: URL(string: model.image), completed: nil)
         isBestPriceLabel.isHidden = !model.isBestPrice
+//        let formated = String(format: "%.2f", "\(model.prices["new"] ?? 1)")
         priceLabel.text = "\(model.prices["new"] ?? 0)"
+//        priceLabel.text = formated
         oldPriceLabbel.text = "\(model.prices["old"] ?? 0)"
         
         if model.prices["new"] == model.prices["old"] {
