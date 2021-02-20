@@ -296,6 +296,11 @@
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="R4U-E0-2Yu">
+            <size key="intrinsicContentSize" width="105" height="17"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow-left" width="24" height="24"/>
         <image name="filters" width="20" height="20"/>

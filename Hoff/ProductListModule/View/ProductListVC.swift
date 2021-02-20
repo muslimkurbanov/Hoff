@@ -23,13 +23,9 @@ class ProductListVC: UIViewController {
     private let cartManager = AddToFavoriteManager.shared
     private let refreshControl = UIRefreshControl()
     
-    var presenter: ViewPresetnerProtocol!
-    var limit = 20
+    private var limit = 20
     
-    var footerView: FooterView?
-    
-    var isLoading:Bool = true
-    
+    public var presenter: ViewPresetnerProtocol!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,9 +34,6 @@ class ProductListVC: UIViewController {
         presenter.getProducts(id: 0, offset: "0", limit: "20", sortType: "desc")
         activityIndicator.startAnimating()
         
-        let collectionViewHeaderFooterReuseIdentifier = "loadingReusableView"
-        let loadingReusableNib = UINib(nibName: "FooterView", bundle: nil)
-        productListCollectionView.register(loadingReusableNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: collectionViewHeaderFooterReuseIdentifier)
     }
     
     //MARK: - IBActions
@@ -85,8 +78,6 @@ extension ProductListVC: ProductListViewProtocol {
         productListCollectionView.isHidden = false
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
-        isLoading = false
-        footerView?.footerActivityIndicator.stopAnimating()
         productListCollectionView.reloadData()
     }
     
@@ -102,22 +93,14 @@ extension ProductListVC: UICollectionViewDataSource {
         return presenter.items.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-            let aFooterView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "loadingReusableView", for: indexPath) as! FooterView
-            footerView = aFooterView
-            footerView?.backgroundColor = UIColor.red
-            return aFooterView
-        
-    }
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if self.isLoading {
-            return CGSize.zero
-        } else {
-            return CGSize(width: collectionView.bounds.size.width, height: 55)
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//
+//    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -140,9 +123,6 @@ extension ProductListVC: UICollectionViewDelegate {
         if id {
             limit += 20
 //            bottomActivityIndicator.isHidden = false
-            isLoading = true
-            footerView?.footerActivityIndicator.startAnimating()
-            
 //            bottomActivityIndicator.startAnimating()
             presenter.getProducts(id: Index.shared.index, offset: "0", limit: "\(limit)", sortType: Index.shared.sortType)
         }
